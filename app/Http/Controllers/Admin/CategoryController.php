@@ -14,7 +14,8 @@ class CategoryController extends CommonController
     {
 //        读取全部信息
         $categorys=Category::all();
-        return view('admin.category.index')->with('data','$categorys');
+//        return view('admin.category.index')->with('data','$categorys');
+        return view('admin.category.index', ['data' => $categorys]);
     }
 //post.admin/category
     public function store()
