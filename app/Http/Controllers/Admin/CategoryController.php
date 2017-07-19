@@ -15,6 +15,8 @@ class CategoryController extends CommonController
 //        读取全部信息
         $categorys=Category::all();
         //dd($categorys);
+=======
+>>>>>>> ce40484cdf7b00ece5a0cb56f5ae099e33e372ec
 //        return view('admin.category.index')->with('data','$categorys');
         return view('admin.category.index', ['data' => $categorys]);
     }
