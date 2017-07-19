@@ -83,4 +83,70 @@
 	10. 然后我们进行最后一步，在index模板中，点击上面的修改密码，就会跳转到修改密码的界面。
 
 	然后我们打开index模板，在a标签中通过url将连接跳转到我们的修改密码界面。
+### 后台文章分类列表页模板导入及基本信息展示
 
+    2017年7月16日
+    21:58
+
+    	1. 文章分类的操作，我们需要首先给他分配路由，这里分配路由不在是get或者any方式了，需要使用资源路由，
+
+    	2. 新建控制器。
+
+    	3. 然后将新建的控制器拖到我们的Admin文件夹中，以及修改他的命名空间。
+
+    	4. 可以使用php artisan route：list来查看所有的 路由列表，然后在我们新建的 resource请求的资源，
+    	我们只查看以下有关于category相关的请求资源。
+    	E:\wampserver\test2>php artisan route:list
+    	 |
+    	|        | GET|HEAD                       | admin/category                 | admin.c
+    	ategory.index   | App\Http\Controllers\Admin\CategoryController@index   | web
+    	 |
+    	|        | POST                           | admin/category                 | admin.c
+    	ategory.store   | App\Http\Controllers\Admin\CategoryController@store   | web
+    	 |
+    	|        | GET|HEAD                       | admin/category/create          | admin.c
+    	ategory.create  | App\Http\Controllers\Admin\CategoryController@create  | web
+    	 |
+    	|        | GET|HEAD                       | admin/category/{category}      | admin.c
+    	ategory.show    | App\Http\Controllers\Admin\CategoryController@show    | web
+    	 |
+    	|        | PUT|PATCH                      | admin/category/{category}      | admin.c
+    	ategory.update  | App\Http\Controllers\Admin\CategoryController@update  | web
+    	 |
+    	|        | DELETE                         | admin/category/{category}      | admin.c
+    	ategory.destroy | App\Http\Controllers\Admin\CategoryController@destroy | web
+    	 |
+    	|        | GET|HEAD                       | admin/category/{category}/edit | admin.c
+    	ategory.edit    | App\Http\Controllers\Admin\CategoryController@edit    |
+    	然后我们新建这些请求资源的方法。
+
+    	5. 然后我们需要跟数据库对接，所以需要新建一个模型
+
+    	打开新建的模型，拖放到Model文件夹中，然后修改命名空间，以及初试化信息。
+    	namespaceApp\Http\Model;
+
+    	useIlluminate\Database\Eloquent\Model;
+
+    	classCategoryextendsModel
+    	{
+    	protected$table='category';//数据表
+    	protected$primaryKey='cate_id';//主键
+    	public$timestamps=false;//更新时间与添加时间
+    	}
+    	6. 然后我们可以试着去读取以下数据表中的所有数据。
+    	$categorys=Category::all();
+    	dd($categorys);
+    	可以使用dd方法打印，查看我们读取的数据。当然我们首先需要在我们的数据表中输入一些东西。
+
+    	然后读取数据。
+
+
+    	7. 然后我们需要将读取到的数据展示到页面中，需要分配一个模板，
+    	returnview('admin.category.index',['data'=>$categorys]);
+    	这里应该使用[]这种方法来将读取的categorys数据读取到页面中，为data变量。然后修改我们展示数据的html为blade模板。
+
+    	8. 修改页面中的内容。然后我们使用foreach来进行循环读取数据。
+
+    	Endforeach放在我们读取的表格的（tr标签的后面）
+
+    最终结果：
