@@ -13,12 +13,23 @@ class CategoryController extends CommonController
     public function index()
     {
 //        读取全部信息
+<<<<<<< HEAD
         $categorys=(new Category)->tree();
 //        return view('admin.category.index')->with('data','$categorys');
         return view('admin.category.index', ['data' => $categorys]);
     }
 
 
+=======
+        $categorys=Category::all();
+<<<<<<< HEAD
+        //dd($categorys);
+=======
+>>>>>>> ce40484cdf7b00ece5a0cb56f5ae099e33e372ec
+//        return view('admin.category.index')->with('data','$categorys');
+        return view('admin.category.index', ['data' => $categorys]);
+    }
+>>>>>>> c9979a0ca48cc7a5ab56b5999c26bcffb9704f9f
 //post.admin/category
     public function store()
     {

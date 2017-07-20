@@ -8,6 +8,14 @@
 </div>
 <!--面包屑导航 结束-->
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ce40484cdf7b00ece5a0cb56f5ae099e33e372ec
+>>>>>>> c9979a0ca48cc7a5ab56b5999c26bcffb9704f9f
 <!--搜索结果页面 列表 开始-->
 <form action="#" method="post">
     <div class="result_wrap">
@@ -29,6 +37,10 @@
         <div class="result_content">
             <table class="list_tab">
                 <tr>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c9979a0ca48cc7a5ab56b5999c26bcffb9704f9f
                     <th class="tc" width="5%">排序</th>
                     <th class="tc"width="5%">ID</th>
                     <th>分类名称</th>
@@ -43,10 +55,66 @@
                     </td>
                     <td class="tc">{{$v->cate_id}}</td>
                     <td>
+<<<<<<< HEAD
                         <a href="#">{{$v->_cate_name}}</a>
                     </td>
                     <td>{{$v->cate_title}}</td>
                     <td>{{$v->cate_view}}</td>
+=======
+                        <a href="#">{{$v->cate_name}}</a>
+                    </td>
+                    <td>{{$v->cate_title}}</td>
+                    <td>{{$v->cate_view}}</td>
+=======
+                    <th class="tc" width="5%"><input type="checkbox" name=""></th>
+                    <th class="tc">排序</th>
+                    <th class="tc">ID</th>
+                    <th>标题</th>
+                    <th>审核状态</th>
+                    <th>点击</th>
+                    <th>发布人</th>
+                    <th>更新时间</th>
+                    <th>评论</th>
+                    <th>操作</th>
+                </tr>
+                @foreach($data as $v)
+
+                <tr>
+                    <td class="tc"><input type="checkbox" name="id[]" value="59"></td>
+                    <td class="tc">
+                        <input type="text" name="ord[]" value="0">
+                    </td>
+                    <td class="tc">59</td>
+                    <td>
+                        <a href="#">{{$v->cate_name}}</a>
+                    </td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>admin</td>
+                    <td>2014-03-15 21:11:01</td>
+                    <td></td>
+                    <td>
+                        <a href="#">修改</a>
+                        <a href="#">删除</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tc"><input type="checkbox" name="id[]" value="59"></td>
+                    <td class="tc">
+                        <input type="text" name="ord[]" value="0">
+                    </td>
+                    <td class="tc">59</td>
+                    <td>
+                        <a href="#">三星 SM-G5308W 白色 移动4G手机 双卡双待</a>
+                    </td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>admin</td>
+                    <td>2014-03-15 21:11:01</td>
+                    <td></td>
+>>>>>>> ce40484cdf7b00ece5a0cb56f5ae099e33e372ec
+>>>>>>> c9979a0ca48cc7a5ab56b5999c26bcffb9704f9f
                     <td>
                         <a href="#">修改</a>
                         <a href="#">删除</a>

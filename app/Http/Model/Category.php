@@ -9,6 +9,7 @@ class Category extends Model
     protected $table='category';//数据表
     protected $primaryKey='cate_id';//主键
     public $timestamps=false;//更新时间与添加时间
+<<<<<<< HEAD
 
 //    public static function tree()
 //    {
@@ -39,4 +40,6 @@ class Category extends Model
         }
         return $arr;
     }
+=======
+>>>>>>> c9979a0ca48cc7a5ab56b5999c26bcffb9704f9f
 }
