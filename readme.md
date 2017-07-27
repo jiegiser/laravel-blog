@@ -83,4 +83,195 @@
 	10. 然后我们进行最后一步，在index模板中，点击上面的修改密码，就会跳转到修改密码的界面。
 
 	然后我们打开index模板，在a标签中通过url将连接跳转到我们的修改密码界面。
+### 后台文章分类列表页模板导入及基本信息展示
 
+    2017年7月16日
+    21:58
+
+    	1. 文章分类的操作，我们需要首先给他分配路由，这里分配路由不在是get或者any方式了，需要使用资源路由，
+
+    	2. 新建控制器。
+
+    	3. 然后将新建的控制器拖到我们的Admin文件夹中，以及修改他的命名空间。
+
+    	4. 可以使用php artisan route：list来查看所有的 路由列表，然后在我们新建的 resource请求的资源，
+    	我们只查看以下有关于category相关的请求资源。
+    	E:\wampserver\test2>php artisan route:list
+    	 |
+    	|        | GET|HEAD                       | admin/category                 | admin.c
+    	ategory.index   | App\Http\Controllers\Admin\CategoryController@index   | web
+    	 |
+    	|        | POST                           | admin/category                 | admin.c
+    	ategory.store   | App\Http\Controllers\Admin\CategoryController@store   | web
+    	 |
+    	|        | GET|HEAD                       | admin/category/create          | admin.c
+    	ategory.create  | App\Http\Controllers\Admin\CategoryController@create  | web
+    	 |
+    	|        | GET|HEAD                       | admin/category/{category}      | admin.c
+    	ategory.show    | App\Http\Controllers\Admin\CategoryController@show    | web
+    	 |
+    	|        | PUT|PATCH                      | admin/category/{category}      | admin.c
+    	ategory.update  | App\Http\Controllers\Admin\CategoryController@update  | web
+    	 |
+    	|        | DELETE                         | admin/category/{category}      | admin.c
+    	ategory.destroy | App\Http\Controllers\Admin\CategoryController@destroy | web
+    	 |
+    	|        | GET|HEAD                       | admin/category/{category}/edit | admin.c
+    	ategory.edit    | App\Http\Controllers\Admin\CategoryController@edit    |
+    	然后我们新建这些请求资源的方法。
+
+    	5. 然后我们需要跟数据库对接，所以需要新建一个模型
+
+    	打开新建的模型，拖放到Model文件夹中，然后修改命名空间，以及初试化信息。
+    	namespaceApp\Http\Model;
+
+    	useIlluminate\Database\Eloquent\Model;
+
+    	classCategoryextendsModel
+    	{
+    	protected$table='category';//数据表
+    	protected$primaryKey='cate_id';//主键
+    	public$timestamps=false;//更新时间与添加时间
+    	}
+    	6. 然后我们可以试着去读取以下数据表中的所有数据。
+    	$categorys=Category::all();
+    	dd($categorys);
+    	可以使用dd方法打印，查看我们读取的数据。当然我们首先需要在我们的数据表中输入一些东西。
+
+    	然后读取数据。
+
+
+    	7. 然后我们需要将读取到的数据展示到页面中，需要分配一个模板，
+    	returnview('admin.category.index',['data'=>$categorys]);
+    	这里应该使用[]这种方法来将读取的categorys数据读取到页面中，为data变量。然后修改我们展示数据的html为blade模板。
+
+    	8. 修改页面中的内容。然后我们使用foreach来进行循环读取数据。
+
+    	Endforeach放在我们读取的表格的（tr标签的后面）
+
+    最终结果：
+
+
+
+### 后台文章分类页多级分类列表	
+    1. 首先我们在数据库中，新建一些一级标题的子栏目，比如新闻下面的军事新闻啊，填充我们的数据库。
+	
+	2. 然后我们刷新我们的界面，我们看到所有的数据都展示出来，我们应该将数据进行处理让新闻一级菜单下面的军事新闻显示跟一级菜单不一样。
+	
+	3. 我们新建一个方法，gettree，然后在方法里面传入我们读入数据库的数据，也就是我们的categorys参数。我们在category模型中，声明一个getTree函数。
+	
+	publicfunctiontree()
+	{
+	$categorys=$this->all();
+	//dd($categorys);
+	return$this->getTree($categorys,'cate_name','cate_id','cate_pid');
+	}
+	4. 然后我们需要进行分类，首先我们需要将pid为0的数据读取出来，是我们的一级菜单。然后我们进行判断pid不是0的数据哪个是新闻，或者体育的内容，因为一级菜单的cate_id是不同的。首先我们使用foreach语句进行筛选pid为0 的数据。
+	publicfunctiongetTree($data,$field_name,$field_id='id',$field_pid='pid',$pid=0)
+	{
+	//将判断后的数据放在arr中
+	$arr=array();
+	foreach($dataas$k=>$v){
+	if($v->$field_pid==$pid){
+	
+	$data[$k]["_".$field_name]=$data[$k][$field_name];
+	//将符合的数据保存在arr数组中
+	$arr[]=$data[$k];
+	//循环我们判断后的数据，
+	foreach($dataas$m=>$n){
+	//进行判断，当前数据中的cate_pid等于我们当前循环的cata_id的数据所有数据，也就是新闻下面对应的子菜单，对应的遍历出来。追加到后面。
+	if($n->$field_pid==$v->$field_id){
+	//然后我们在
+	$data[$m]["_".$field_name]='├─'.$data[$m][$field_name];
+	$arr[]=$data[$m];
+	}
+	}
+	}
+	}
+	//返回arr让他在页面中显示
+	Return  $arr;
+	}
+	5. 进行重组数据之后，我们应该将我们的data数据传回到页面中。使用如下代码：
+	$categorys=(newCategory)->tree();
+	//returnview('admin.category.index')->with('data','$categorys');
+	returnview('admin.category.index',['data'=>$categorys]);
+	6. 我们发现数据读取后，发现我们区分不出二级菜单，我们可以在读取得到的数据前面加一个标识符，├─来表示一个层级关系。
+	if($n->$field_pid==$v->$field_id){
+	$data[$m]["_".$field_name]='├─'.$data[$m][$field_name];
+	$arr[]=$data[$m];
+	}
+	7. 添加成功后，我们在页面读取二级菜单时，需要读取我们新的字段。
+	<td>
+	<ahref="#">{{$v->_cate_name}}</a>
+	</td>
+	8. 我们博客在以后的运行中，会出现很多的二级分类，我们在getTree函数中，设置的输入的字段设置为了固定，我们需要在我们将字段设置为以后博客系统通用的字段。
+	整个函数的代码：
+	publicfunctiontree()
+	{
+	$categorys=$this->all();
+	//dd($categorys);
+	return$this->getTree($categorys,'cate_name','cate_id','cate_pid');
+	}
+	publicfunctiongetTree($data,$field_name,$field_id='id',$field_pid='pid',$pid=0)
+	{
+	$arr=array();
+	foreach($dataas$k=>$v){
+	if($v->$field_pid==$pid){
+	$data[$k]["_".$field_name]=$data[$k][$field_name];
+	$arr[]=$data[$k];
+	foreach($dataas$m=>$n){
+	if($n->$field_pid==$v->$field_id){
+	$data[$m]["_".$field_name]='├─'.$data[$m][$field_name];
+	$arr[]=$data[$m];
+	}
+	}
+	}
+	}
+	return$arr;
+	}
+	9. 字段$pid我们可以进行这样传入参数，然后在声明函数中，设置$pid=0，
+	if($v->$field_pid==$pid)
+	我们也可以设置$field_id='id‘，cate_id的默认为id，这样，大众化的人们会使用id。
+	publicfunctiongetTree($data,$field_name,$field_id='id',$field_pid='pid',$pid=0)
+	10. 我们不能直接将函数放在控制器中，我们可以将函数放在我们的模型中。在模型中新建一个tree函数。
+	publicfunctiontree()
+	{
+	$categorys=$this->all();
+	//dd($categorys);
+	return$this->getTree($categorys,'cate_name','cate_id','cate_pid');
+	}
+	11. 我们使用public定义函数时，在我们的控制器中，调用tree函数时，我们需要实例化一个tree，然后指向tree函数。
+        $categorys=(newCategory)->tree();
+	12. 也可以使用这么方法：
+	publicstaticfunctiontree()
+	//{
+	//$categorys=Category::all();
+	////dd($categorys);
+	//return(newCategory)->getTree($categorys,'cate_name','cate_id','cate_pid');
+	//}
+	13. 在控制器中使用如下函数接受数据：
+	$categorys=(newCategory()->tree());
+	14. 模型中整体代码如下：
+	publicfunctiontree()
+	{
+	$categorys=$this->all();
+	//dd($categorys);
+	return$this->getTree($categorys,'cate_name','cate_id','cate_pid');
+	}
+	publicfunctiongetTree($data,$field_name,$field_id='id',$field_pid='pid',$pid=0)
+	{
+	$arr=array();
+	foreach($dataas$k=>$v){
+	if($v->$field_pid==$pid){
+	$data[$k]["_".$field_name]=$data[$k][$field_name];
+	$arr[]=$data[$k];
+	foreach($dataas$m=>$n){
+	if($n->$field_pid==$v->$field_id){
+	$data[$m]["_".$field_name]='├─'.$data[$m][$field_name];
+	$arr[]=$data[$m];
+	}
+	}
+	}
+	}
+	return$arr;
+	}
