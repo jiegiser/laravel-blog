@@ -20,4 +20,5 @@ Route::any('admin/crypt','Admin\LoginController@crypt');
 Route::get('admin/info','Admin\indexController@info');
 Route::any('admin/login','Admin\LoginController@login');
 Route::any('admin/quit','Admin\LoginController@quit');
-Route::any('admin/pass','Admin\indexController@pass');
+Route::resource('admin/category','Admin\CategoryController');
+Route::post('admin/category','Admin\CategoryController@changeorder');
