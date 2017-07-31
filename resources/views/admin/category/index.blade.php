@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 @section('content')
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19036491e6dcf2e08bb27139bc454fafc7f69f7a
         <!--面包屑导航 开始-->
 <div class="crumb_warp">
     <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
@@ -7,6 +11,23 @@
 </div>
 <!--面包屑导航 结束-->
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ce40484cdf7b00ece5a0cb56f5ae099e33e372ec
+>>>>>>> c9979a0ca48cc7a5ab56b5999c26bcffb9704f9f
+>>>>>>> d69e38e7e1e983d9244013e33f7644a2f37310b5
+>>>>>>> bccaf6d3020f9500f6751e9bf4138abd72c5adf3
+>>>>>>> 19036491e6dcf2e08bb27139bc454fafc7f69f7a
 <!--搜索结果页面 列表 开始-->
 <form action="#" method="post">
     <div class="result_wrap">
@@ -28,6 +49,19 @@
         <div class="result_content">
             <table class="list_tab">
                 <tr>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c9979a0ca48cc7a5ab56b5999c26bcffb9704f9f
+>>>>>>> d69e38e7e1e983d9244013e33f7644a2f37310b5
+>>>>>>> bccaf6d3020f9500f6751e9bf4138abd72c5adf3
+>>>>>>> 19036491e6dcf2e08bb27139bc454fafc7f69f7a
                     <th class="tc" width="5%">排序</th>
                     <th class="tc"width="5%">ID</th>
                     <th>分类名称</th>
@@ -38,14 +72,95 @@
                 @foreach($data as $v)
                 <tr>
                     <td class="tc">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 19036491e6dcf2e08bb27139bc454fafc7f69f7a
                         <input type="text" onchange="changeOrder(this,{{$v->cate_id}})" name="ord[]" value="{{$v->cate_order}}">
                     </td>
                     <td class="tc">{{$v->cate_id}}</td>
                     <td>
+<<<<<<< HEAD
+=======
+=======
+                        <input type="text" name="ord[]" value="{{$v->cate_order}}">
+                    </td>
+                    <td class="tc">{{$v->cate_id}}</td>
+                    <td>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d69e38e7e1e983d9244013e33f7644a2f37310b5
+>>>>>>> bccaf6d3020f9500f6751e9bf4138abd72c5adf3
+>>>>>>> 19036491e6dcf2e08bb27139bc454fafc7f69f7a
                         <a href="#">{{$v->_cate_name}}</a>
                     </td>
                     <td>{{$v->cate_title}}</td>
                     <td>{{$v->cate_view}}</td>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                        <a href="#">{{$v->cate_name}}</a>
+                    </td>
+                    <td>{{$v->cate_title}}</td>
+                    <td>{{$v->cate_view}}</td>
+=======
+                    <th class="tc" width="5%"><input type="checkbox" name=""></th>
+                    <th class="tc">排序</th>
+                    <th class="tc">ID</th>
+                    <th>标题</th>
+                    <th>审核状态</th>
+                    <th>点击</th>
+                    <th>发布人</th>
+                    <th>更新时间</th>
+                    <th>评论</th>
+                    <th>操作</th>
+                </tr>
+                @foreach($data as $v)
+
+                <tr>
+                    <td class="tc"><input type="checkbox" name="id[]" value="59"></td>
+                    <td class="tc">
+                        <input type="text" name="ord[]" value="0">
+                    </td>
+                    <td class="tc">59</td>
+                    <td>
+                        <a href="#">{{$v->cate_name}}</a>
+                    </td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>admin</td>
+                    <td>2014-03-15 21:11:01</td>
+                    <td></td>
+                    <td>
+                        <a href="#">修改</a>
+                        <a href="#">删除</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="tc"><input type="checkbox" name="id[]" value="59"></td>
+                    <td class="tc">
+                        <input type="text" name="ord[]" value="0">
+                    </td>
+                    <td class="tc">59</td>
+                    <td>
+                        <a href="#">三星 SM-G5308W 白色 移动4G手机 双卡双待</a>
+                    </td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>admin</td>
+                    <td>2014-03-15 21:11:01</td>
+                    <td></td>
+>>>>>>> ce40484cdf7b00ece5a0cb56f5ae099e33e372ec
+>>>>>>> c9979a0ca48cc7a5ab56b5999c26bcffb9704f9f
+>>>>>>> d69e38e7e1e983d9244013e33f7644a2f37310b5
+>>>>>>> bccaf6d3020f9500f6751e9bf4138abd72c5adf3
+>>>>>>> 19036491e6dcf2e08bb27139bc454fafc7f69f7a
                     <td>
                         <a href="#">修改</a>
                         <a href="#">删除</a>
@@ -89,6 +204,7 @@
     </div>
 </form>
 <!--搜索结果页面 列表 结束-->
+<<<<<<< HEAD
 <script>
    function changeOrder(obj,cate_id){
        var cate_order=$(obj).val();
@@ -102,4 +218,18 @@
        });
    }
 </script>
+=======
+<<<<<<< HEAD
+<script>
+   function changeOrder(obj,cate_id){
+       var cate_order=$(obj).val();
+       $.post("{{url('admin/cate/changeorder')}}}",{'_token':'{{csrf_token()}}',cate_id,'cate_order':cate_order},function(data){
+           alert(data.msg);
+       });
+   }
+</script>
+=======
+
+>>>>>>> bccaf6d3020f9500f6751e9bf4138abd72c5adf3
+>>>>>>> 19036491e6dcf2e08bb27139bc454fafc7f69f7a
 @endsection
