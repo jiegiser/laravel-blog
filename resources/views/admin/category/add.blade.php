@@ -11,6 +11,10 @@
 <div class="result_wrap">
     <div class="result_title">
         <h3>快捷操作</h3>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 43f5691389ef960ea21c1ba9929f70b29ead16a0
         {{--传回一个数组，若数组长度大于0，则说明有错误,并遍历错误--}}
         @if(count($errors)>0)
             <div class="mark">
@@ -23,6 +27,11 @@
                 @endif
             </div>
         @endif
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 199dc8b4469af12636e4fa275d3163100edb7b7b
+>>>>>>> 43f5691389ef960ea21c1ba9929f70b29ead16a0
     </div>
     <div class="result_content">
         <div class="short_wrap">
