@@ -21,3 +21,7 @@ Route::get('admin/info','Admin\indexController@info');
 Route::any('admin/login','Admin\LoginController@login');
 Route::any('admin/quit','Admin\LoginController@quit');
 Route::any('admin/pass','Admin\indexController@pass');
+Route::any('admin/category','Admin\indexController@edit');
+Route::resource('admin/category','Admin\CategoryController');
+Route::post('admin/cate/changeorder','Admin\CategoryController@changeorder');
+Route::resource('admin/article','Admin\ArticleController');
