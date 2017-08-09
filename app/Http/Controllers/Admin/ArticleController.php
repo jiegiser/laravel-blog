@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
+<<<<<<< HEAD
 use App\Http\Model\Article;
+=======
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
 use App\Http\Model\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+<<<<<<< HEAD
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+=======
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
 
 class ArticleController extends CommonController
 {
@@ -25,6 +31,7 @@ class ArticleController extends CommonController
         $data=(new Category)->tree();
        return view('admin.article.add',compact('data'));
     }
+<<<<<<< HEAD
     //post.admin/article 添加文章提交
     public function store()
     {
@@ -51,3 +58,6 @@ class ArticleController extends CommonController
 //        }
      }
     }
+=======
+}
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a

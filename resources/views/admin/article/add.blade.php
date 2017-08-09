@@ -34,8 +34,13 @@
 <!--结果集标题与导航组件 结束-->
 
 <div class="result_wrap">
+<<<<<<< HEAD
     {{--表单提交通过post方法提交到admin/article方法里面--}}
     <form action="{{url('admin/article')}}" method="post">
+=======
+    {{--表单提交通过post方法提交到admin/category方法里面--}}
+    <form action="{{url('admin/category')}}" method="post">
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
         {{csrf_field()}}
         <table class="add_tab">
             <tbody>
@@ -45,14 +50,22 @@
                     <select name="cate_id">
                         {{--通过循环数据库中的cate_pid等于0的数据读取父级的标题--}}
                         @foreach($data as $d)
+<<<<<<< HEAD
                             <option value="{{$d->cate_id}}">{{$d->_cate_name}}</option>
+=======
+                        <option value="{{$d->cate_id}}">{{$d->_cate_name}}</option>
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
                         @endforeach
                     </select>
                 </td>
             </tr>
 
             <tr>
+<<<<<<< HEAD
                 <th><i class="require">*</i>文章标题：</th>
+=======
+                <th>文章标题：</th>
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
                 <td>
                     <input type="text" class="lg" name="art_title">
                 </td>
@@ -67,6 +80,7 @@
                 <th>缩略图：</th>
                 <td>
                     <input type="text" size="50" name="art_thumb">
+<<<<<<< HEAD
                     <input id="file_upload" name="file_upload" type="file" multiple="true">
                     <script type="text/javascript">
                         <?php $timestamp = time();?>
@@ -98,6 +112,8 @@
                 <th></th>
                 <td>
                     <img src="" alt="" id="art_thumb_img" style="max-width: 350px; max-height:100px;">
+=======
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
                 </td>
             </tr>
             <tr>
@@ -116,16 +132,29 @@
             <tr>
                 <th>文章内容：</th>
                 <td>
+<<<<<<< HEAD
                     <script id="editor" name="art_content" type="text/plain" style="width:860px;height:500px;"></script>
                     <script type="text/javascript">
                         var ue = UE.getEditor('editor');
                     </script>
+=======
+                    <script type="text/javascript" charset="utf-8" src="{{asset('resources/views/org/ueditor/ueditor.config.js')}}"></script>
+                    <script type="text/javascript" charset="utf-8" src="{{asset('resources/views/org/ueditor/ueditor.all.min.js')}}"> </script>
+                    <script type="text/javascript" charset="utf-8" src="{{asset('resources/views/org/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+                    <script id="editor" name="art_content" type="text/plain" style="width:860px;height:500px;"></script>
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
                     <style>
                         .edit-default+{line-height: 28px;}
                         div.edui-combox-body,div.edui-button-body,div.edui-splitbutton-body
                         {overflow: hidden;height: 20px;}
                         div.edui-box{overflow: hidden;height: 22px;}
                     </style>
+<<<<<<< HEAD
+=======
+                    <script type="text/javascript">
+                        var ue = UE.getEditor('editor');
+                    </script>
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
                 </td>
             </tr>
 

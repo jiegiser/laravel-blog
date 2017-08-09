@@ -7,12 +7,15 @@
     <script type="text/javascript" src="{{ asset('resources/views/admin/style/js/jquery.js')}}"></script>
     <script type="text/javascript" src="{{ asset('resources/views/admin/style/js/ch-ui.admin.js')}}"></script>
     <script type="text/javascript" src="{{ asset('resources/views/org/layer/layer.js')}}"></script>
+<<<<<<< HEAD
     <script type="text/javascript" src="{{asset('resources/views/org/uploadify/jquery.uploadify.min.js')}}" ></script>
     <link rel="stylesheet" href="{{asset('resources/views/org/uploadify/uploadify.css')}}">
     <script type="text/javascript" charset="utf-8" src="{{asset('resources/views/org/ueditor/ueditor.config.js')}}"></script>
     <script type="text/javascript" charset="utf-8" src="{{asset('resources/views/org/ueditor/ueditor.all.min.js')}}"> </script>
     <script type="text/javascript" charset="utf-8" src="{{asset('resources/views/org/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
 
+=======
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
 </head>
 <body>
 @yield('content')
