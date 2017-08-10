@@ -30,16 +30,13 @@
     <div class="result_content">
         <ul>
             <li>
-                <label>操作系统</label><span>{{PHP_OS}}}</span>
+                <label>操作系统</label><span>{{PHP_OS}}</span>
             </li>
             <li>
-                <label>运行环境</label><span>Apache/2.2.21 (Win64) PHP/5.3.10</span>
+                <label>运行环境</label><span>{{$_SERVER['SERVER_SOFTWARE']}}</span>
             </li>
             <li>
-                <label>PHP运行方式</label><span>{{$_SERVER['SERVER_SOFTWARE']}}</span>
-            </li>
-            <li>
-                <label>设计-版本</label><span>v-1.0</span>
+                <label>版本</label><span>v-1.0</span>
             </li>
             <li>
                 <label>上传附件限制</label><span><?php echo get_cfg_var ("upload_max_filesize")?get_cfg_var ("upload_max_filesize"):"不允许上传附件"; ?></span>
