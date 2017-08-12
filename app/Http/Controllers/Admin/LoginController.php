@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Input;
 
 class LoginController extends CommonController
 {
+    public function crypt()
+    {
+       $atr="eyJpdiI6IlBBNTJjV2ZkWkp3TXZvQm5xdGR3R2c9PSIsInZhbHVlIjoiM3RGYVg3U2pCellJbEdHTlwvS0MzTWc9PSIsIm1hYyI6ImRmYzdjZDhmNGQ2N2I5MTBjOTMxYjdkYmMzNGExZThhZmE2YWMxNGUzYWIzYWM5Mzg4MTQyZDI4OGJkMzJhYTUifQ";
+        echo Crypt::decrypt($atr);
+    }
     public function login(){
         if($input=Input::all()){//如果有数据不为空，就是说post请求获得到了用户提交的数据，
             $code=new \Code;
