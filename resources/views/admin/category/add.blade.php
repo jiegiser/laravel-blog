@@ -10,7 +10,47 @@
 <!--结果集标题与导航组件 开始-->
 <div class="result_wrap">
     <div class="result_title">
+<<<<<<< HEAD
         <h3>分类管理</h3>
+=======
+<<<<<<< HEAD
+        <h3>分类管理</h3>
+=======
+<<<<<<< HEAD
+        <h3>分类管理</h3>
+=======
+<<<<<<< HEAD
+        <h3>分类管理</h3>
+=======
+<<<<<<< HEAD
+        <h3>分类管理</h3>
+=======
+<<<<<<< HEAD
+        <h3>分类管理</h3>
+=======
+<<<<<<< HEAD
+        <h3>分类管理</h3>
+=======
+<<<<<<< HEAD
+        <h3>分类管理</h3>
+=======
+<<<<<<< HEAD
+        <h3>分类管理</h3>
+=======
+        <h3>快捷操作</h3>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 43f5691389ef960ea21c1ba9929f70b29ead16a0
+>>>>>>> 8c3bffb9c3c6d491dfcb0704ec4f21c6e02e8128
+>>>>>>> 009670add50838a872efaa8926121fdd6be8e8d0
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
+>>>>>>> 1d0c44e1f4fbf3ee398df507acff60b0aaf00012
+>>>>>>> 0d3badc3ec4415ffc27d056e6dd58b0428e6d2c9
+>>>>>>> f09f7be4580995de5e6a8a23aadab72761b6cf7a
+>>>>>>> b14c1efb23efb69f4e75f1242c77a579b63a421d
+>>>>>>> 9bf9963412e5665df40ab2f838dd2b5ff84bbfaf
+>>>>>>> ebfbc020cd0616a37ec159c7b9d2fbed82c303c1
         {{--传回一个数组，若数组长度大于0，则说明有错误,并遍历错误--}}
         @if(count($errors)>0)
             <div class="mark">
@@ -23,11 +63,73 @@
                 @endif
             </div>
         @endif
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 009670add50838a872efaa8926121fdd6be8e8d0
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
+>>>>>>> 1d0c44e1f4fbf3ee398df507acff60b0aaf00012
+>>>>>>> 0d3badc3ec4415ffc27d056e6dd58b0428e6d2c9
+>>>>>>> f09f7be4580995de5e6a8a23aadab72761b6cf7a
+>>>>>>> b14c1efb23efb69f4e75f1242c77a579b63a421d
+>>>>>>> 9bf9963412e5665df40ab2f838dd2b5ff84bbfaf
+>>>>>>> ebfbc020cd0616a37ec159c7b9d2fbed82c303c1
     </div>
     <div class="result_content">
         <div class="short_wrap">
             <a href="{{url('admin/category/create')}}"><i class="fa fa-plus"></i>添加分类</a>
             <a href="{{url('admin/category')}}"><i class="fa fa-recycle"></i>全部分类</a>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 199dc8b4469af12636e4fa275d3163100edb7b7b
+>>>>>>> 43f5691389ef960ea21c1ba9929f70b29ead16a0
+    </div>
+    <div class="result_content">
+        <div class="short_wrap">
+            <a href="#"><i class="fa fa-plus"></i>新增文章</a>
+            <a href="#"><i class="fa fa-recycle"></i>批量删除</a>
+            <a href="#"><i class="fa fa-refresh"></i>更新排序</a>
+>>>>>>> 8c3bffb9c3c6d491dfcb0704ec4f21c6e02e8128
+>>>>>>> 009670add50838a872efaa8926121fdd6be8e8d0
+>>>>>>> 9de3a6e5b192beea43151da0acccbf2cb48aba2a
+>>>>>>> 1d0c44e1f4fbf3ee398df507acff60b0aaf00012
+>>>>>>> 0d3badc3ec4415ffc27d056e6dd58b0428e6d2c9
+>>>>>>> f09f7be4580995de5e6a8a23aadab72761b6cf7a
+>>>>>>> b14c1efb23efb69f4e75f1242c77a579b63a421d
+>>>>>>> 9bf9963412e5665df40ab2f838dd2b5ff84bbfaf
+>>>>>>> ebfbc020cd0616a37ec159c7b9d2fbed82c303c1
         </div>
     </div>
 </div>
