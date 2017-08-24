@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Model\Links;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
+
 class LinksController extends Controller
 {
     //get.admin/links  全部友情链接列表
@@ -55,7 +58,6 @@ class LinksController extends Controller
             'link_name.required'=>'友情链接名称不能为空！',
             'link_url.required'=>'友情链接URL不能为空！',
         ];
-
         $validator = Validator::make($input,$rules,$message);
 
         if($validator->passes()){
