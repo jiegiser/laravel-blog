@@ -27,5 +27,9 @@ Route::post('admin/cate/changeorder','Admin\CategoryController@changeOrder');
 Route::resource('admin/article','Admin\ArticleController');
 Route::any('admin/upload','Admin\CommonController@upload');
 Route::resource('admin/links','Admin\LinksController');
+<<<<<<< HEAD
 Route::post('admin/links/changeorder','Admin\LinksController@changeOrder');
 Route::resource('admin/navs', 'Admin\NavsController');
+=======
+Route::post('admin/links/changeorder','Admin\LinksController@changeOrder');
+>>>>>>> 1284a53b95035b018a501eb9bee88d18d26d4eda
