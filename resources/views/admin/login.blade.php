@@ -7,8 +7,8 @@
 </head>
 <body style="background:#F3F3F4;">
 	<div class="login_box">
-		<h1>Blog</h1>
-		<h2>欢迎使用博客管理平台</h2>
+		<h1>System</h1>
+		<h2>欢迎使用防洪监测系统管理平台</h2>
 		<div class="form">
 			@if(session('msg'))
 				<!--//进行判断，若session中的msg是否有东西，-->
@@ -36,7 +36,7 @@
 					</li>
 				</ul>
 			</form>
-			<p><a href="#">返回首页</a> &copy; 2016 Powered by <a href="http://www.jiegiser.win" target="_blank">http://www.jiegiser.win</a></p>
+			<p><a href="#">返回首页</a> &copy; 2017 Powered by <a href="http://www.jiegiser.win" target="_blank">jiegiser</a></p>
 		</div>
 	</div>
 </body>
