@@ -51,7 +51,7 @@
 
 <!--底部 开始-->
 <div class="bottom_box">
-	CopyRight © 2015. Powered By <a href="http://jiegiser.win">http://jiegiser.win</a>.
+	CopyRight © 2017. Powered By <a href="http://jiegiser.win">http://jiegiser.win</a>.
 </div>
 <!--底部 结束-->
 

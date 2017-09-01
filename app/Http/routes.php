@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Home\IndexController@index');
+Route::get('/cate','Home\IndexController@cate');
+Route::get('/art','Home\IndexController@article');
 Route::get('admin/index','Admin\indexController@index');
 Route::any('admin/code','Admin\LoginController@code');
 Route::any('admin/crypt','Admin\LoginController@crypt');
@@ -33,3 +33,4 @@ Route::post('admin/navs/changeorder','Admin\NavsController@changeOrder');
 Route::resource('admin/config','Admin\ConfigController');
 Route::post('admin/config/changeorder','Admin\ConfigController@changeOrder');
 Route::post('admin/config/changecontent','Admin\ConfigController@changeContent');
+Route::post('admin/config/putfile','Admin\ConfigController@Putfile');
