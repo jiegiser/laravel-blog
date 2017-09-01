@@ -13,19 +13,18 @@ class LinksTableSeeder extends Seeder
     {
         $data = [
             [
-                'link_name' => '杰的博客',
-                'link_title' => '每天进步一点点',
-                'link_url' => 'http://www.jiegiser.win',
+                'link_name' => '后盾网',
+                'link_title' => '国内口碑最好的PHP培训机构',
+                'link_url' => 'http://www.houdunwang.com',
                 'link_order' => 1,
             ],
             [
-                'link_name' => 'happyGIS分享GIS快乐',
-                'link_title' => '分享gis技术',
-                'link_url' => 'http://www.happygis.com',
+                'link_name' => '后盾论坛',
+                'link_title' => '后盾网，人人做后盾',
+                'link_url' => 'http://bbs.houdunwang.com',
                 'link_order' => 2,
             ]
         ];
         DB::table('links')->insert($data);
     }
-
 }

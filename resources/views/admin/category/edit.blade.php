@@ -3,7 +3,7 @@
         <!--面包屑导航 开始-->
 <div class="crumb_warp">
     <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-    <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo;  分类管理
+    <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 分类管理
 </div>
 <!--面包屑导航 结束-->
 
@@ -11,7 +11,6 @@
 <div class="result_wrap">
     <div class="result_title">
         <h3>编辑分类</h3>
-        {{--传回一个数组，若数组长度大于0，则说明有错误,并遍历错误--}}
         @if(count($errors)>0)
             <div class="mark">
                 @if(is_object($errors))
@@ -34,9 +33,8 @@
 <!--结果集标题与导航组件 结束-->
 
 <div class="result_wrap">
-    {{--表单提交通过post方法提交到admin/category方法里面--}}
-    <form action="{{url('admin/category')}}" method="post">
-            <input type="hidden" name="_method" value="put">
+    <form action="{{url('admin/category/'.$field->cate_id)}}" method="post">
+        <input type="hidden" name="_method" value="put">
         {{csrf_field()}}
         <table class="add_tab">
             <tbody>
@@ -44,10 +42,11 @@
                 <th width="120"><i class="require">*</i>父级分类：</th>
                 <td>
                     <select name="cate_pid">
-                        {{--通过循环数据库中的cate_pid等于0的数据读取父级的标题--}}
-                        <option value="">==顶级分类==</option>
+                        <option value="0">==顶级分类==</option>
                         @foreach($data as $d)
-                        <option value="{{$d->cate_id}}">{{$d->cate_name}}</option>
+                        <option value="{{$d->cate_id}}"
+                                @if($d->cate_id==$field->cate_pid) selected @endif
+                        >{{$d->cate_name}}</option>
                         @endforeach
                     </select>
                 </td>
@@ -55,7 +54,6 @@
             <tr>
                 <th><i class="require">*</i>分类名称：</th>
                 <td>
-                    {{--读取分类名称--}}
                     <input type="text" name="cate_name" value="{{$field->cate_name}}">
                     <span><i class="fa fa-exclamation-circle yellow"></i>分类名称必须填写</span>
                 </td>
@@ -63,7 +61,7 @@
             <tr>
                 <th>分类标题：</th>
                 <td>
-                    <input type="text" class="lg" name="cate_title" value="{{$field->cate_title}}">
+                    <input type="text" class="lg" name="cate_title"  value="{{$field->cate_title}}">
                 </td>
             </tr>
             <tr>
@@ -81,10 +79,9 @@
             <tr>
                 <th><i class="require">*</i>排序：</th>
                 <td>
-                    <input type="text" class="sm" name="cate_order" value="{{$field->cate_order}}">
+                    <input type="text" class="sm" name="cate_order"  value="{{$field->cate_order}}">
                 </td>
             </tr>
-
             <tr>
                 <th></th>
                 <td>
@@ -96,4 +93,5 @@
         </table>
     </form>
 </div>
+
 @endsection

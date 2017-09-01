@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="{{ asset('resources/views/admin/style/css/ch-ui.admin.css') }}">
-	<link rel="stylesheet" href="{{ asset('resources/views/admin/style/font/css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href="{{asset('resources/views/admin/style/css/ch-ui.admin.css')}}">
+	<link rel="stylesheet" href="{{asset('resources/views/admin/style/font/css/font-awesome.min.css')}}">
 </head>
 <body style="background:#F3F3F4;">
 	<div class="login_box">
-		<h1>System</h1>
-		<h2>欢迎使用防洪监测系统管理平台</h2>
+		<h1>防洪监测系统管理平台</h1>
+		<h2>欢迎登录</h2>
 		<div class="form">
 			@if(session('msg'))
-				<!--//进行判断，若session中的msg是否有东西，-->
 			<p style="color:red">{{session('msg')}}</p>
-				<!--将session中的提示信息打印出来-->
 			@endif
 			<form action="" method="post">
 				{{csrf_field()}}
@@ -29,14 +27,14 @@
 					<li>
 						<input type="text" class="code" name="code"/>
 						<span><i class="fa fa-check-square-o"></i></span>
-						<img src="{{ url('admin/code') }}" alt="" onclick="this.src='{{ url('admin/code') }}?'+Math.random()">
+						<img src="{{url('admin/code')}}" alt="" onclick="this.src='{{url('admin/code')}}?'+Math.random()">
 					</li>
 					<li>
 						<input type="submit" value="立即登陆"/>
 					</li>
 				</ul>
 			</form>
-			<p><a href="#">返回首页</a> &copy; 2017 Powered by <a href="http://www.jiegiser.win" target="_blank">jiegiser</a></p>
+			<p><a href="#">返回首页</a> &copy; 2017 Powered by <a href="http://www.jiegiser.win" target="_blank">http://www.jiegiser.win</a></p>
 		</div>
 	</div>
 </body>

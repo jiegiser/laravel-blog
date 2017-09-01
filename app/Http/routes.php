@@ -11,26 +11,39 @@
 |
 */
 
-Route::get('/','Home\IndexController@index');
-Route::get('/cate','Home\IndexController@cate');
-Route::get('/art','Home\IndexController@article');
-Route::get('admin/index','Admin\indexController@index');
-Route::any('admin/code','Admin\LoginController@code');
-Route::any('admin/crypt','Admin\LoginController@crypt');
-Route::get('admin/info','Admin\indexController@info');
-Route::any('admin/login','Admin\LoginController@login');
-Route::any('admin/quit','Admin\LoginController@quit');
-Route::any('admin/pass','Admin\indexController@pass');
-Route::any('admin/category','Admin\indexController@edit');
-Route::resource('admin/category','Admin\CategoryController');
-Route::post('admin/cate/changeorder','Admin\CategoryController@changeOrder');
-Route::resource('admin/article','Admin\ArticleController');
-Route::any('admin/upload','Admin\CommonController@upload');
-Route::resource('admin/links','Admin\LinksController');
-Route::post('admin/links/changeorder','Admin\LinksController@changeOrder');
-Route::resource('admin/navs','Admin\NavsController');
-Route::post('admin/navs/changeorder','Admin\NavsController@changeOrder');
-Route::resource('admin/config','Admin\ConfigController');
-Route::post('admin/config/changeorder','Admin\ConfigController@changeOrder');
-Route::post('admin/config/changecontent','Admin\ConfigController@changeContent');
-Route::post('admin/config/putfile','Admin\ConfigController@Putfile');
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/', 'Home\IndexController@index');
+    Route::get('/cate/{cate_id}', 'Home\IndexController@cate');
+    Route::get('/gis', 'Home\IndexController@gis');
+    Route::get('/a/{art_id}', 'Home\IndexController@article');
+    Route::any('admin/login', 'Admin\LoginController@login');
+    Route::get('admin/code', 'Admin\LoginController@code');
+});
+
+
+Route::group(['middleware' => ['web','admin.login'],'prefix'=>'admin','namespace'=>'Admin'], function () {
+    Route::get('index', 'IndexController@index');
+    Route::get('info', 'IndexController@info');
+    Route::get('quit', 'LoginController@quit');
+    Route::any('pass', 'IndexController@pass');
+
+    Route::post('cate/changeorder', 'CategoryController@changeOrder');
+    Route::resource('category', 'CategoryController');
+
+    Route::resource('article', 'ArticleController');
+
+    Route::post('links/changeorder', 'LinksController@changeOrder');
+    Route::resource('links', 'LinksController');
+
+    Route::post('navs/changeorder', 'NavsController@changeOrder');
+    Route::resource('navs', 'NavsController');
+
+    Route::get('config/putfile', 'ConfigController@putFile');
+    Route::post('config/changecontent', 'ConfigController@changeContent');
+    Route::post('config/changeorder', 'ConfigController@changeOrder');
+    Route::resource('config', 'ConfigController');
+
+    Route::any('upload', 'CommonController@upload');
+
+});

@@ -33,7 +33,7 @@
 <!--结果集标题与配置项组件 结束-->
 
 <div class="result_wrap">
-    <form action="{{url('admin/config/'.$field->conf_id)}}" method="post">
+    <form action="{{url('admin/config/'.$field->conf_id)}})}}" method="post">
         {{method_field('PUT')}}
         {{csrf_field()}}
         <table class="add_tab">

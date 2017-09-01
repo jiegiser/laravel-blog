@@ -35,19 +35,19 @@
                     <th>操作</th>
                 </tr>
                 @foreach($data as $v)
-                    <tr>
-                        <td class="tc">{{$v->art_id}}</td>
-                        <td>
-                            <a href="#">{{$v->art_title}}</a>
-                        </td>
-                        <td>{{$v->art_view}}</td>
-                        <td>{{$v->art_editor}}</td>
-                        <td>{{date('Y-m-d',$v->art_time)}}</td>
-                        <td>
-                            <a href="{{url('admin/article/'.$v->art_id.'/edit')}}">修改</a>
-                            <a href="javascript:;" onclick="delArt({{$v->art_id}})">删除</a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="tc">{{$v->art_id}}</td>
+                    <td>
+                        <a href="#">{{$v->art_title}}</a>
+                    </td>
+                    <td>{{$v->art_view}}</td>
+                    <td>{{$v->art_editor}}</td>
+                    <td>{{date('Y-m-d',$v->art_time)}}</td>
+                    <td>
+                        <a href="{{url('admin/article/'.$v->art_id.'/edit')}}">修改</a>
+                        <a href="javascript:;" onclick="delArt({{$v->art_id}})">删除</a>
+                    </td>
+                </tr>
                 @endforeach
             </table>
 

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Model\Config;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Model\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
@@ -59,7 +59,7 @@ class ConfigController extends Controller
         $str = '<?php return '.var_export($config,true).';';
         file_put_contents($path,$str);
     }
-
+    
     public function changeOrder()
     {
         $input = Input::all();
@@ -159,4 +159,5 @@ class ConfigController extends Controller
     {
 
     }
+
 }

@@ -37,7 +37,7 @@
                 <h2>相关文章</h2>
                 <ul>
                     @foreach($data as $d)
-                        <li><a href="{{url('a/'.$d->art_id)}}" title="{{$d->art_title}}">{{$d->art_title}}</a></li>
+                    <li><a href="{{url('a/'.$d->art_id)}}" title="{{$d->art_title}}">{{$d->art_title}}</a></li>
                     @endforeach
                 </ul>
             </div>

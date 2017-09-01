@@ -3,7 +3,7 @@
         <!--面包屑导航 开始-->
 <div class="crumb_warp">
     <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-    <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo;系统基本信息
+    <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 系统基本信息
 </div>
 <!--面包屑导航 结束-->
 
@@ -62,10 +62,10 @@
     <div class="result_content">
         <ul>
             <li>
-                <label>官方交流网站：</label><span><a href="http://jiegiser.win">http://jiegiser.win</a></span>
+                <label>官方交流网站：</label><span><a href="#">http://bbs.houdunwang.com</a></span>
             </li>
             <li>
-                <label>官方交流QQ群：</label><span><a href="http://jiegiser.win"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png"></a></span>
+                <label>官方交流QQ群：</label><span><a href="#"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png"></a></span>
             </li>
         </ul>
     </div>

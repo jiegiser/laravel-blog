@@ -23,7 +23,7 @@
             </h3>
             <ul>
                 @foreach($pics as $p)
-                    <li><a href="{{url('a/'.$p->art_id)}}"  target="_blank"><img src="{{url($p->art_thumb)}}"></a><span>{{$p->art_title}}</span></li>
+                <li><a href="{{url('a/'.$p->art_id)}}"  target="_blank"><img src="{{url($p->art_thumb)}}"></a><span>{{$p->art_title}}</span></li>
                 @endforeach
             </ul>
         </div>
@@ -34,13 +34,13 @@
         </h2>
         <div class="bloglist left">
             @foreach($data as $d)
-                <h3>{{$d->art_title}}</h3>
-                <figure><img src="{{url($d->art_thumb)}}"></figure>
-                <ul>
-                    <p>{{$d->art_description}}</p>
-                    <a title="{{$d->art_title}}" href="{{url('a/'.$d->art_id)}}" target="_blank" class="readmore">阅读全文>></a>
-                </ul>
-                <p class="dateview"><span>{{date('Y-m-d',$d->art_time)}}</span><span>作者：{{$d->art_editor}}</span></p>
+            <h3>{{$d->art_title}}</h3>
+            <figure><img src="{{url($d->art_thumb)}}"></figure>
+            <ul>
+                <p>{{$d->art_description}}</p>
+                <a title="{{$d->art_title}}" href="{{url('a/'.$d->art_id)}}" target="_blank" class="readmore">阅读全文>></a>
+            </ul>
+            <p class="dateview"><span>{{date('Y-m-d',$d->art_time)}}</span><span>作者：{{$d->art_editor}}</span></p>
             @endforeach
             <div class="page">
                 {{$data->links()}}
@@ -63,7 +63,7 @@
                 </h3>
                 <ul class="website">
                     @foreach($links as $l)
-                        <li><a href="{{$l->link_url}}" target="_blank">{{$l->link_name}}</a></li>
+                    <li><a href="{{$l->link_url}}" target="_blank">{{$l->link_name}}</a></li>
                     @endforeach
                 </ul>
             </div>

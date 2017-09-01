@@ -37,6 +37,7 @@
         @endforeach
     </ul>
 @show
+
 <footer>
     <p>{!! Config::get('web.copyright') !!} {!! Config::get('web.web_count') !!}</p>
 </footer>
