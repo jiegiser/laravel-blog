@@ -13,6 +13,7 @@
     </script>
     <link rel="stylesheet" type="text/css" href="{{asset('resources/views/home/js/themes/gray/easyui.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('resources/views/home/js/themes/icon.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('resources/views/home/css/nav_a.css')}}">
     <link rel="stylesheet" href="https://js.arcgis.com/3.16/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
 
@@ -115,23 +116,31 @@
     dojo.ready(init);
 </script>
 <body class="easyui-layout">
-<div data-options="region:'north'" style="height:80px;background-color:#eeeeee;left: 0;
-    top: 10px;
-    line-height: 70px;
-    letter-spacing:8px;
-    text-align: center;
-    color: #009688;
-    font-size: 30px;">
-    防洪监测系统
+<div data-options="region:'north'" style="height:80px;left: 0;
+ margin: auto;
+    position: relative;
+    overflow: hidden;">
+    <div id="logo">
+        <a style="width: 260px;height: 60px;margin: 10px 0 0 10px;position: absolute;display: block;background: url('{{url('resources/views/home/images/logo.jpg')}}') no-repeat;"
+           href="http://localhost:8090/test2/gis"></a>
+    </div>
+
+    <nav id="topnav" style="float: right;width: 100%;margin: 30px 0 0 0;text-align: right;display: block;">
+        @foreach($navs as $k=>$v)
+        <a class="nav_a" href="{{$v->nav_url}}">
+            <span style="cursor: pointer">{{$v->nav_name}}</span></a>
+    </nav>
 </div>
-<div id="panelHeader" data-options="region:'west',split:true,title:'图层索引'" style="width:200px;padding:10px;">
-
-    图层控制：<br />
-    <ul id="toc" class="easyui-tree"></ul>
-
+<div data-options="region:'west',split:true,title:'图层索引'" style="width:200px;padding:10px;">
+    <div id="panelHeader"
+         style="width: 100%; height: 100%;">
+        图层控制：<br />
+        <ul id="toc" class="easyui-tree"></ul>
+    </div>
 </div>
-<div data-options="region:'center'" id="map">
-
+<div data-options="region:'center'">
+    <div id="map"
+         style="width: 100%; height: 100%; "></div>
 </div>
 <div data-options="region:'east',split:true,title:'菜单'" style="width:330px;padding:10px;" class="easyui-accordion">
     <div title="缓冲区分析" iconCls="icon-tip" style="overflow:auto;padding:10px;">
